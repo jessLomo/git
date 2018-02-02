@@ -1,0 +1,56 @@
+/*
+    * 语法（兼容css语法）
+        * 单行注释
+        * 多行注释
+        * 变量
+            * 格式：$变量名:值;
+            * 分类
+                * 全局
+                    * global
+                * 局部
+            * 使用：
+                * 一般用法：用在属性值
+                * 特殊用法：
+                    * 属性名/选择器
+            * 多值变量
+                * list：（类似array）
+                * map：（类似object）
+        * 导入:import
+            * 可以省略后缀名scss
+            * 可以省略前下划线_
+        * 循环
+            * @for
+
+    * 编译（scss => css）
+        * gulp-sass <- gulp <- npm <- nodejs
+        * 文件名以_开头的sass文件不会被编译成css文件
+ */
+
+
+//单行注释
+
+
+// 全局变量
+$mainColor:#58bc58;
+$pd:15px;
+
+.goods{
+    // 局部变量
+    // $pd:10px;
+
+    $pd:10px !global;//修改全局变量
+
+    padding:$pd;border:1px solid $mainColor;//10px
+}
+
+.page{
+    padding:$pd;//15px
+    background-color:#efefef;
+}
+nav{
+    border-bottom:2px solid #ccc;
+    li{
+        display:inline-block;padding:5px 10px;color:orange;
+    }
+}
+
